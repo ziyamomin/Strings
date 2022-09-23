@@ -7,7 +7,7 @@
 
 #---------------------------------------------------------------------
 # testreplace is a testing script for the replace program.
-# To run it, type "testreplace"
+# To run it, issue the command "./testreplace"
 #
 # To use it, the working directory must contain:
 # (1) replace, the executable version of your program, and

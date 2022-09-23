@@ -7,8 +7,8 @@
 
 #---------------------------------------------------------------------
 # testreplacediff is a testing script for the replace program.
-# To run it, type "testreplacediff", followed by the name of
-# an input file, a "from" string, and a "to" string.
+# To run it, issue the command "./testreplacediff" followed by
+# the name of an input file, a "from" string, and a "to" string.
 #
 # The script runs the replace program and the given samplereplace
 # program on the specified file with the specified "from" string and
