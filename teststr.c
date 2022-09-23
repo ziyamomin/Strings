@@ -59,7 +59,7 @@ static void setCpuTimeLimit(void)
 /* Populate pcStr, which points to an array of at least iSize
    characters, with iSize-1 random ASCII characters followed by
    a '\0' character. */
-   
+
 static void randomString(char *pcStr, int iSize)
 {
    int i;
@@ -81,7 +81,7 @@ static void testGetLength(void)
 
    printf("Testing Str_getLength()\n");
    fflush(stdout);
-   
+
    printf("   Boundary Tests\n");
    fflush(stdout);
 
@@ -200,7 +200,7 @@ static void testCopy(void)
 
    printf("   Stress Tests\n");
    fflush(stdout);
-   
+
    {
       int i;
       char acSrc[STRESS_STRING_SIZE];
@@ -268,7 +268,7 @@ static void testConcat(void)
    {
       const char acSrc[] = {'R', 'u', 't', 'h', '\0', 's'};
       char acDest1[] =
-         {'B', 'a', 'b', 'e', '\0', 'd', 'd', 'd', 'd', 'd'};     
+         {'B', 'a', 'b', 'e', '\0', 'd', 'd', 'd', 'd', 'd'};
       char acDest2[] =
          {'B', 'a', 'b', 'e', '\0', 'd', 'd', 'd', 'd', 'd'};
       pcResult = Str_concat(acDest1, acSrc);
@@ -276,10 +276,10 @@ static void testConcat(void)
       (void)strcat(acDest2, acSrc);
       ASSURE(memcmp(acDest1, acDest2, sizeof(acDest1)) == 0);
    }
-   
+
    printf("   Stress Tests\n");
    fflush(stdout);
-   
+
    {
       int i;
       char acSrc[STRESS_STRING_SIZE];
@@ -295,7 +295,7 @@ static void testConcat(void)
          (void)strcat(acDest2, acSrc);
          ASSURE(memcmp(acDest1, acDest2, STRESS_STRING_SIZE) == 0);
       }
-   }   
+   }
 }
 
 /*--------------------------------------------------------------------*/
@@ -450,7 +450,7 @@ static void testCompare(void)
 
    printf("   Stress Tests\n");
    fflush(stdout);
-   
+
    {
       int i;
       char acSrc1[STRESS_STRING_SIZE];
@@ -463,7 +463,7 @@ static void testCompare(void)
          iResult2 = strcmp(acSrc1, acSrc2);
          ASSURE(sign(iResult1) == sign(iResult2));
       }
-   } 
+   }
 }
 
 /*--------------------------------------------------------------------*/
@@ -658,7 +658,7 @@ static void testSearch(void)
       pcResult2 = strstr(acHaystack, acNeedle);
       ASSURE(pcResult1 == pcResult2);
    }
-   
+
       {
       const char acHaystack[] = "aabbcc";
       const char acNeedle[] = "abc";
@@ -666,10 +666,10 @@ static void testSearch(void)
       pcResult2 = strstr(acHaystack, acNeedle);
       ASSURE(pcResult1 == pcResult2);
    }
-   
+
    printf("   Stress Tests\n");
-   fflush(stdout);    
-   
+   fflush(stdout);
+
    {
       int i;
       char acSrc1[STRESS_STRING_SIZE];
@@ -682,8 +682,8 @@ static void testSearch(void)
          pcResult2 = strstr(acSrc1, acSrc2);
          ASSURE(pcResult1 == pcResult2);
       }
-   } 
-  
+   }
+
    {
       int i;
       char acSrc1[STRESS_STRING_SIZE];
@@ -696,8 +696,8 @@ static void testSearch(void)
          pcResult2 = strstr(acSrc1, acSrc2);
          ASSURE(pcResult1 == pcResult2);
       }
-   } 
-   
+   }
+
    {
       int i;
       char acSrc1[STRESS_STRING_SIZE];
@@ -710,7 +710,7 @@ static void testSearch(void)
          pcResult2 = strstr(acSrc1, acSrc2);
          ASSURE(pcResult1 == pcResult2);
       }
-   }    
+   }
 
    {
       int i;
@@ -724,7 +724,7 @@ static void testSearch(void)
          pcResult2 = strstr(acSrc1, acSrc2);
          ASSURE(pcResult1 == pcResult2);
       }
-   }  
+   }
 
    {
       int i;
@@ -738,7 +738,7 @@ static void testSearch(void)
          pcResult2 = strstr(acSrc1, acSrc2);
          ASSURE(pcResult1 == pcResult2);
       }
-   } 
+   }
 }
 
 /*--------------------------------------------------------------------*/
@@ -749,7 +749,7 @@ static void testSearch(void)
 
 int main(int argc, char *argv[])
 {
-   
+
 #ifndef S_SPLINT_S
    setCpuTimeLimit();
 #endif
