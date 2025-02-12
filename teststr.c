@@ -504,6 +504,14 @@ static void testSearch(void)
       ASSURE(pcResult1 == pcResult2);
    }
 
+   {
+      const char acHaystack[] = {'\0', 'a', 'b', 'c', 'd', 'e', '\0'};
+      const char acNeedle[] = "abcde";
+      pcResult1 = Str_search(acHaystack, acNeedle);
+      pcResult2 = strstr(acHaystack, acNeedle);
+      ASSURE(pcResult1 == pcResult2);
+   }
+
    printf("   Statement Tests\n");
    fflush(stdout);
 
