@@ -20,7 +20,7 @@ by s1 until a total of n characters have been written. s1, a pointer
 to the destination, is returned.*/
 char *Str_copy(char restrict s1[], const char restrict s2[], size_t n) {
     size_t i;
-    assert(s1 != NULL && s2 != NULL && n != NULL);
+    assert(s1 != NULL && s2 != NULL);
     for(i = 0; i < n && s2[i] != '\0'; i++) {
         s1[i] = s2[i];
     }
@@ -35,11 +35,11 @@ char *Str_copy(char restrict s1[], const char restrict s2[], size_t n) {
 char *Str_concat(char restrict s1[], const char restrict s2[], size_t n) {
     size_t i = 0;
     size_t j = 0;
-    assert(s1 != NULL && s2 != NULL && n != NULL);
+    assert(s1 != NULL && s2 != NULL);
     while(s1[i] != '\0') {
         i++;
     }
-    while (j < n && s2[] != '\0') {
+    while (j < n && s2[j] != '\0') {
         s1[i++] = s2[j++];
     }
     return s1;
@@ -54,7 +54,7 @@ pointed to by s2. Comparison stops if a null character is encountered
 in either array. */
 int Str_compare(const char s1[], const char s2[], size_t n) {
     size_t i; 
-    assert(s1 != NULL && s2 != NULL && n != NULL);
+    assert(s1 != NULL && s2 != NULL);
     for(i = 0; i < n && s1[i] != '\0' && s2[i] != '\0'; i++) {
         if(s1[i] != s2[i]) {
             return s1[i] - s2[i];
