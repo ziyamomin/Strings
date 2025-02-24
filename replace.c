@@ -20,7 +20,16 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   /* Insert your code here. */
+   assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
+   if(pcFrom == NULL) {
+      print(pcLine);
+      return 0;
+   }
+   int replacements_made;
+   else {
+
+      replacements_made++;
+   }
 }
 
 /*--------------------------------------------------------------------*/
@@ -45,6 +54,8 @@ int main(int argc, char *argv[])
    char *pcFrom;
    char *pcTo;
    size_t uReplaceCount = 0;
+
+   assert(argc != NULL && argv != NULL);
 
    if (argc != PROPER_ARG_COUNT)
    {
