@@ -24,6 +24,7 @@ by s1 until a total of n characters have been written. s1, a pointer
 to the destination, is returned.*/
 char  *Str_copy(char * restrict s1, const char * restrict s2, size_t n) {
     char *start = s1;
+    assert(s1 != NULL && s2 != NULL && n != NULL);
     while (n-- > 0 && *s2 != '\0') {
         *s1 = *s2;
         s1++;
@@ -43,6 +44,7 @@ encountered or n characters have been copied. s1, a pointer to the
 concatenated string is returned. */
 char *Str_concat(char * restrict s1, const char * restrict s2, size_t n)
 {
+    assert(s1 != NULL && s2 != NULL && n != NULL);
     while(*s1 != '\0') {
         s1++;
     }
@@ -78,6 +80,7 @@ int Str_compare(const char *s1, const char *s2, size_t n) {
 the sequence of characters in the string pointed to by s2.
 Returns a null pointer if no match is found. */
 char *Str_search(const char *s1, const char *s2) {
+    assert(s1 != NULL && s2 != NULL);
     while(*s1 != '\0') {
         const char *start = s1;
         const char *s2_copy = s2;
