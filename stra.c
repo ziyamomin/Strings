@@ -61,8 +61,8 @@ int Str_compare(const char s1[], const char s2[]) {
         }
         i++;
     }
-    
-    return (int)(s1[i] - s2[i]);
+    int difference = s1[i] - s2[i];
+    return difference;
 }
 
 /* A pointer to the first occurrence in the string pointed to by s1 of

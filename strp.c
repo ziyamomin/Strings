@@ -70,7 +70,8 @@ int Str_compare(const char *s1, const char *s2) {
         s2++;
     }
 
-    return (int)(*s1 - *s2);
+    int difference = *s1 - *s2;
+    return difference;
 }
 
 /* A pointer to the first occurrence in the string pointed to by s1 of
