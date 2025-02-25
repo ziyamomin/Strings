@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-size_t Str_getLength(const char s[])
+size_t Str_getLength(const char pcSrc[])
 {
     size_t uLength = 0;
     assert(s != NULL);
@@ -11,7 +11,8 @@ size_t Str_getLength(const char s[])
     return uLength;
 }
 
-char *Str_copy(char s1[], const char s2[]) {
+char *Str_copy(char pcDest[], const char pcSrc[])
+{   
     size_t i;
     assert(s1 != NULL && s2 != NULL);
     for(i = 0; s2[i] != '\0'; i++) {
@@ -47,7 +48,7 @@ int Str_compare(const char s1[], const char s2[]) {
     return (int)(s1[i] - s2[i]);
 }
 
-const char *Str_search(const char s1[], const char s2[]) {
+char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
     size_t i;
     size_t j;
     assert(s1 != NULL && s2 != NULL);

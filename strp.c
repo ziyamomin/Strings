@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-size_t Str_getLength(const char *s)
+size_t Str_getLength(const char *pcSrc)
 {
     const char *end;
     assert(s != NULL);
@@ -12,7 +12,7 @@ size_t Str_getLength(const char *s)
     return (size_t)(end - s);
 }
 
-char  *Str_copy(char * s1, const char * s2) {
+char *Str_copy(char *pcDest, const char *pcSrc) {
     char *start = s1;
     assert(s1 != NULL && s2 != NULL);
     while (*s2 != '\0') {
@@ -52,7 +52,7 @@ int Str_compare(const char *s1, const char *s2) {
     return (int)(*s1 - *s2);
 }
 
-const char *Str_search(const char *s1, const char *s2) {
+char *Str_search(const char *pcHaystack, const char *pcNeedle) {
     assert(s1 != NULL && s2 != NULL);
 
     if (*s2 == '\0') {
@@ -69,7 +69,8 @@ const char *Str_search(const char *s1, const char *s2) {
         }
 
         if (*s2_copy == '\0') {
-            return s1;
+            /* Casting to match strstr return type */
+            return (char *)s1;
         }
 
         s1++;

@@ -40,14 +40,21 @@ Ziya Momin
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+This assignment was extremely helpful in getting me comfortable with
+using pointers and clearing up my misconceptions on it. It was also
+helpful doing both an array and a pointer implementation to see the
+similarities between the two and how to adapt an algorithm to fit both
+implementations. While tedious at sometimes to debug the cornercases
+in my replace code, this assignment was very fun overall, and I enjoyed
+putting all of the C programming skills I've learned so far together in
+an assignment. I also feel more comfortable using bash and coding in C.
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
 will help your grader to grade it in the most favorable light? In
 particular, what bugs are in your submission?
 
-
+N/A
 
 ------------------------------------------------------------------------
 What warnings does splint generate on stra.c, and what are your
@@ -62,7 +69,6 @@ What warnings does critTer generate on stra.c, and what are your
 disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
-
 
 
 ------------------------------------------------------------------------
