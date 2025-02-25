@@ -17,28 +17,29 @@
    assumptions about the maximum number of replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
-static size_t replaceAndWrite(const char *pcLine,
-                              const char *pcFrom, const char *pcTo)
-{
-   size_t replacements = 0;
-   size_t fromLength = Str_getLength(pcFrom);
-   const char *pCurrent = pcLine;
-   const char *pFound;
-   
-   if(Str_getLength(pcFrom) == 0) {
-      printf("%s", pcLine);
-      return 0;
-   }
+static size_t replaceAndWrite(const char *pcLine, const char *pcFrom, const char *pcTo) {
+    size_t replacements = 0;
+    size_t fromLength = Str_getLength(pcFrom);
+    size_t toLength = Str_getLength(pcTo);
+    const char *pCurrent = pcLine;
+    const char *pFound;
 
-   while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
-      printf("%d", (int)(pFound - pCurrent));
-      printf("%s", pcTo);
-      pCurrent = pFound + fromLength;
-      replacements++;
-   }
-   printf("%s", pCurrent);
-   return replacements;
-   }
+    if (fromLength == 0) {
+        printf("%s", pcLine);
+        return 0;
+    }
+
+    while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
+        fwrite(pCurrent, 1, pFound - pCurrent, stdout);
+        printf("%s", pcTo);
+        pCurrent = pFound + fromLength;
+        replacements++;
+    }
+
+    printf("%s", pCurrent);
+    return replacements;
+}
+
 
 /*--------------------------------------------------------------------*/
 
