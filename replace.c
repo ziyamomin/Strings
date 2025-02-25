@@ -17,7 +17,8 @@
    assumptions about the maximum number of replacements or the
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
-static size_t replaceAndWrite(const char *pcLine, const char *pcFrom, const char *pcTo) {
+static size_t replaceAndWrite(const char *pcLine, const char *pcFrom,
+const char *pcTo) {
     size_t replacements = 0;
     size_t fromLength = Str_getLength(pcFrom);
     const char *pCurrent = pcLine;
@@ -58,25 +59,33 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom, const char
 int main(int argc, char *argv[])
 {
    enum {MAX_LINE_SIZE = 4096}; /* Defines the maximum line size */
-   enum {PROPER_ARG_COUNT = 3}; /* Ensures there are exactly 3 arguments */
+   enum {PROPER_ARG_COUNT = 3}; /* Ensures there are exactly 3 arguments
+   */
 
    char acLine[MAX_LINE_SIZE]; /* Array to store each line of input */
    char *pcFrom; /* The substring to find in the input. */
    char *pcTo; /* The substring to replace it with */
-   size_t uReplaceCount = 0; /* Counter for the number of replacements */
+   size_t uReplaceCount = 0; /* Counter for the number of replacements
+   */
 
-   if (argc != PROPER_ARG_COUNT) /* Check if the correct number of arguments were passed */
+   if (argc != PROPER_ARG_COUNT) /* Check if the correct number of
+   arguments were passed */
    {
-      fprintf(stderr, "usage: %s fromstring tostring\n", argv[0]); /* Print usage message */
-      return EXIT_FAILURE; /* Return failure code since the correct number of arguments were not passed */
+      fprintf(stderr, "usage: %s fromstring tostring\n", argv[0]); /*
+      Print usage message */
+      return EXIT_FAILURE; /* Return failure code since the correct
+      number of arguments were not passed */
    }
 
    pcFrom = argv[1]; /* Assign the "from" string "*/
    pcTo = argv[2]; /* Assign the "to" string */
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) /* Read each line from stdin */
-      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo); /* Replace occurences of "from" with "to" */
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) /* Read each line
+   from stdin */
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo); /* Replace
+      occurences of "from" with "to" */
 
-   fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount); /* Print the total replacement count */
+   fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
+   /* Print the total replacement count */
    return 0; /* Return success */
 }

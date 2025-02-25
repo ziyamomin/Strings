@@ -61,7 +61,8 @@ const char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
     
     for (i = 0; pcHaystack[i] != '\0'; i++) {
         j = 0;
-        while (pcHaystack[i+j] != '\0' && pcNeedle[j] != '\0' && pcHaystack[i+j] == pcNeedle[j]) {
+        while (pcHaystack[i+j] != '\0' && pcNeedle[j] != '\0' &&
+        pcHaystack[i+j] == pcNeedle[j]) {
             j++;
         }
         if (pcNeedle[j] == '\0') {
