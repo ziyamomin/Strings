@@ -1,3 +1,4 @@
+/* str.h */
 #ifndef STR_H
 #define STR_H
 
