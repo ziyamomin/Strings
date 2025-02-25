@@ -18,6 +18,6 @@ char *Str_concat(char *pcDest, const char *pcSrc);
 int Str_compare(const char *pcSrc1, const char *pcSrc2);
 
 /* A pointer to the first occurrence in the string pointed to by parameter s1 of the sequence of characters in the string pointed to by parameter s2. Returns a null pointer if no match is found. */
-char *Str_search(const char *pcHaystack, const char *pcNeedle);
+const char *Str_search(const char *pcHaystack, const char *pcNeedle);
 
 #endif

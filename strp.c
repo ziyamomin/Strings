@@ -53,7 +53,7 @@ int Str_compare(const char *pcSrc1, const char *pcSrc2) {
     return (int)(*pcSrc1 - *pcSrc2);
 }
 
-char *Str_search(const char *pcHaystack, const char *pcNeedle) {
+const char *Str_search(const char *pcHaystack, const char *pcNeedle) {
     assert(pcHaystack != NULL && pcNeedle != NULL);
 
     if (*pcNeedle == '\0') {
