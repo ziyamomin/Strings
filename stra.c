@@ -52,7 +52,6 @@ int Str_compare(const char pcSrc1[], const char pcSrc2[]) {
 char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
     size_t i;
     size_t j;
-    pc = pcHaystack;
     assert(pcHaystack != NULL && pcNeedle != NULL);
     
     if (pcNeedle[0] == '\0') {
@@ -65,7 +64,7 @@ char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
             j++;
         }
         if (pcNeedle[j] == '\0') {
-            return &pc[i];
+            return &pcHaystack[i];
         }
     }
     return NULL;
