@@ -45,7 +45,6 @@ char *Str_concat(char s1[], const char s2[]) {
     return s1;
 }
 
-
 /* This function lexicographically compares the passed in strings s1 
 and s2. A negative, zero, or positive integer is returned, depending on
 whether the first n characters of the array pointed to by s1 are less

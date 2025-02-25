@@ -41,8 +41,8 @@ encountered or n characters have been copied. s1, a pointer to the
 concatenated string is returned. */
 char *Str_concat(char *s1, const char *s2)
 {
-    assert(s1 != NULL && s2 != NULL);
     char *start = s1;
+    assert(s1 != NULL && s2 != NULL);
     while (*s1 != '\0') {
         s1++;
     }
