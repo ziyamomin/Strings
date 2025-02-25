@@ -27,7 +27,7 @@ static size_t replaceAndWrite(const char *pcLine,
 
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
    if(pcFrom == NULL) {
-      printf(pcLine);
+      printf("%s", pcLine);
       return 0;
    }
 
@@ -40,7 +40,7 @@ static size_t replaceAndWrite(const char *pcLine,
       pCurrent = pFound + fromLength;
       replacements++;
    }
-   printf(pCurrent);
+   printf("%s", pCurrent);
    return replacements;
    }
 
