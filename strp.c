@@ -61,8 +61,8 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
     }
 
     while (*pcHaystack != '\0') {
-        const char *pcHaystack_copy = s1;
-        const char *pcNeedle_copy = s2;
+        const char *pcHaystack_copy = pcHaystack;
+        const char *pcNeedle_copy = pcNeedle;
 
         while (*pcHaystack_copy != '\0' && *pcNeedle_copy != '\0' && *pcHaystack_copy == *pcNeedle_copy) {
             pcHaystack_copy++;
