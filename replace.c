@@ -56,7 +56,7 @@ static size_t replaceAndWrite(const char *pcLine,
 
 int main(int argc, char *argv[])
 {
-   assert(argc != NULL && argv != NULL);
+   assert(argv != NULL);
    enum {MAX_LINE_SIZE = 4096};
    enum {PROPER_ARG_COUNT = 3};
 
