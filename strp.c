@@ -80,25 +80,25 @@ the sequence of characters in the string pointed to by s2.
 Returns a null pointer if no match is found. */
 const char *Str_search(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
-    const char *start = s1;
 
     if (*s2 == '\0') {
         return s1;
     }
 
     while (*s1 != '\0') {
+        const char *s1_copy = s1;
         const char *s2_copy = s2;
 
-        while (*s1 != '\0' && *s2_copy != '\0' && *s1 == *s2_copy) {
-            s1++;
+        while (*s1_copy != '\0' && *s2_copy != '\0' && *s1_copy == *s2_copy) {
+            s1_copy++;
             s2_copy++;
         }
 
         if (*s2_copy == '\0') {
-            return start;
+            return s1;
         }
 
-        s1 = start + 1;
+        s1++;
     }
 
     return NULL;
