@@ -128,6 +128,13 @@ Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+It's not possible for Str_copy or Str_concat to use assert to check if
+the destination memory area specified by the caller is large enough.
+These functions only receive pointers to the strings and don't
+have information about the actual allocated space. They can't determine
+how much memory was set aside for the destination, whether it's on the
+heap or stack, or if there's even enough room for the operation.
+Without this information, they can't reliably verify the destination's
+capacity or prevent potential memory overflows.
 
 ------------------------------------------------------------------------
