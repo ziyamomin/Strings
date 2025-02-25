@@ -64,7 +64,6 @@ int main(int argc, char *argv[])
    char *pcFrom;
    char *pcTo;
    size_t uReplaceCount = 0;
-   size_t fromLength = Str_getLength(pcFrom);
 
    if (argc != PROPER_ARG_COUNT)
    {
