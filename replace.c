@@ -20,7 +20,6 @@
 static size_t replaceAndWrite(const char *pcLine, const char *pcFrom, const char *pcTo) {
     size_t replacements = 0;
     size_t fromLength = Str_getLength(pcFrom);
-    size_t toLength = Str_getLength(pcTo);
     const char *pCurrent = pcLine;
     const char *pFound;
 
