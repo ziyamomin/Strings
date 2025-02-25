@@ -63,12 +63,12 @@ int main(int argc, char *argv[])
    enum {MAX_LINE_SIZE = 4096};
    enum {PROPER_ARG_COUNT = 3};
 
+   assert(argv != NULL);
+
    char acLine[MAX_LINE_SIZE];
    char *pcFrom;
    char *pcTo;
    size_t uReplaceCount = 0;
-
-   assert(argv != NULL);
 
    if (argc != PROPER_ARG_COUNT)
    {
