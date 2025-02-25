@@ -63,15 +63,16 @@ pointed to by s2. Comparison stops if a null character is encountered
 in either array. */
 int Str_compare(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
-    
+
     while (*s1 != '\0' && *s2 != '\0') {
-        if(*s1 != *s2) {
+        if (*s1 != *s2) {
             return *s1 - *s2;
         }
         s1++;
         s2++;
-    } 
-    return 0;
+    }
+
+    return *s1 - *s2;
 }
 
 /* A pointer to the first occurrence in the string pointed to by s1 of
