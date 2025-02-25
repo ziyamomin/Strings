@@ -25,12 +25,7 @@ static size_t replaceAndWrite(const char *pcLine,
    const char *pCurrent = pcLine;
    const char *pFound;
    
-   assert(pcLine != NULL && pcTo != NULL);
-
-   if(pcFrom == NULL) {
-      printf("%s", pcLine);
-      return 0;
-   }
+   assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
 
    while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
       printf("%d", (int)(pFound - pCurrent));
