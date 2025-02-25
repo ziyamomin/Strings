@@ -8,10 +8,10 @@
 size_t Str_getLength(const char *s);
 
 /* Copies the first n characters of the array pointed to by s2 into the array pointed to by s1. If it encounters a null character in the array pointed to by s2, the function adds null characters to the array pointed by s1 until a total of n characters have been written. s1, a pointer to the destination, is returned.*/
-char  *Str_copy(char * s1, const char * s2, size_t n);
+char  *Str_copy(char * s1, const char * s2);
 
 /* This function appends a copy of the parameter string s2 to the end of the parameter string s1. The function returns the pointer s1. */
-char *Str_concat(char * s1, const char * s2, size_t n);
+char *Str_concat(char * s1, const char * s2);
 
 
 /* This function lexicographically compares the passed in strings s1 and s2. A negative, zero, or positive integer is returned, depending on whether the first n characters of the array pointed to by s1 are less than, equal to, or greater than the first n characters of the array pointed to by s2. Comparison stops if a null character is encountered in either array. */
