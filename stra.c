@@ -67,7 +67,7 @@ int Str_compare(const char s1[], const char s2[]) {
 /* A pointer to the first occurrence in the string pointed to by s1 of
 the sequence of characters in the string pointed to by s2. Returns a
 null pointer if no match is found. */
-char *Str_search(const char s1[], const char s2[]) {
+const char *Str_search(const char s1[], const char s2[]) {
     size_t i;
     size_t j;
     assert(s1 != NULL && s2 != NULL);
