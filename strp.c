@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 /* Try to use array notation as much as possible nad traverse each
 string sing an index rleative to the beginning of the string */
