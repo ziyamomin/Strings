@@ -35,7 +35,7 @@ static size_t replaceAndWrite(const char *pcLine,
    *pFound;
    
    while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
-      printf((int)(pFound - pCurrent));
+      printf("%d", (int)(pFound - pCurrent));
       printf(pcTo);
       pCurrent = pFound + fromLength;
       replacements++;
