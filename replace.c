@@ -66,10 +66,9 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-   // edit code here
-      
-   ]
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
+      uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
+   }
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
