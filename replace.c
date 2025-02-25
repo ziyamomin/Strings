@@ -18,7 +18,7 @@
    maximum number of characters in strings pcLine, pcFrom, or pcTo. */
 
 static size_t replaceAndWrite(const char *pcLine,
-                              const char *pcFrom, const char *pcTo) {
+                              const char *pcFrom, const char *pcTo)
 {
    size_t replacements = 0;
    size_t fromLength = Str_getLength(pcFrom);
@@ -34,7 +34,7 @@ static size_t replaceAndWrite(const char *pcLine,
    *pCurrent = pcLine;
    *pFound;
    
-   while ((pFound = Str_search(pCurrent, pcFrom)) != NULL)
+   while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
       printf((int)(pFound - pCurrent));
       printf(pcTo);
       pCurrent = pFound + fromLength;
@@ -42,7 +42,7 @@ static size_t replaceAndWrite(const char *pcLine,
    }
    printf(pCurrent);
    return replacements;
-}
+   }
 
 /*--------------------------------------------------------------------*/
 
