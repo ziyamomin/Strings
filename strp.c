@@ -71,7 +71,7 @@ char *Str_search(const char *pcHaystack, const char *pcNeedle) {
 
         if (*pcNeedle_copy == '\0') {
             /* Casting to match strstr return type */
-            return (char *)pcHaystack;
+            return (char*)pcHaystack;
         }
 
         pcHaystack++;
