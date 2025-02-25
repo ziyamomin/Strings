@@ -22,17 +22,13 @@ array pointed to by s1. If it encounters a null character in the array
 pointed to by s2, the function adds null characters to the array pointed
 by s1 until a total of n characters have been written. s1, a pointer
 to the destination, is returned.*/
-char  *Str_copy(char * s1, const char * s2, size_t n) {
+char  *Str_copy(char * s1, const char * s2) {
     char *start = s1;
-    assert(s1 != NULL && s2 != NULL && n != NULL);
-    while (n-- > 0 && *s2 != '\0') {
+    assert(s1 != NULL && s2 != NULL);
+    while (*s2 != '\0') {
         *s1 = *s2;
         s1++;
         s2++;
-    }
-    while(n--) {
-        *s1 = '\0';
-        s1++;
     }
 
     return start; 
@@ -42,13 +38,13 @@ char  *Str_copy(char * s1, const char * s2, size_t n) {
 the string pointed to by s1. Copying stops when a null character is 
 encountered or n characters have been copied. s1, a pointer to the
 concatenated string is returned. */
-char *Str_concat(char * s1, const char * s2, size_t n)
+char *Str_concat(char * s1, const char * s2)
 {
-    assert(s1 != NULL && s2 != NULL && n != NULL);
+    assert(s1 != NULL && s2 != NULL);
     while(*s1 != '\0') {
         s1++;
     }
-    while(n-- > 0|| *s2 != '\0') {
+    while(*s2 != '\0') {
         *s1 = *s2;
         s1++;
         s2++;
