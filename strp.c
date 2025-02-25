@@ -1,79 +1,80 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "str.h"
 
 size_t Str_getLength(const char *pcSrc)
 {
     const char *end;
-    assert(s != NULL);
-    end = s;
+    assert(pcSrc != NULL);
+    end = pcSrc;
     while (*end != '\0')
         end++;
     return (size_t)(end - s);
 }
 
 char *Str_copy(char *pcDest, const char *pcSrc) {
-    char *start = s1;
-    assert(s1 != NULL && s2 != NULL);
-    while (*s2 != '\0') {
-        *s1 = *s2;
-        s1++;
-        s2++;
+    char *start = pcDest;
+    assert(pcDest != NULL && pcSrc != NULL);
+    while (*pcSrc != '\0') {
+        *pcDest = *pcSrc;
+        pcBest++;
+        pcSrc++;
     }
-    *s1 = '\0';
+    *pcDest = '\0';
     return start; 
 }
 
-char *Str_concat(char *s1, const char *s2)
+char *Str_concat(char *pcDest, const char *pcSrc)
 {
-    char *start = s1;
-    assert(s1 != NULL && s2 != NULL);
-    while (*s1 != '\0') {
-        s1++;
+    char *start = pcDest;
+    assert(pcDest != NULL && pcSrc != NULL);
+    while (*pcDest != '\0') {
+        pcDest++;
     }
-    while (*s2 != '\0') {
-        *s1 = *s2;
-        s1++;
-        s2++;
+    while (*pcSrc != '\0') {
+        *pcDest = *pcSrc;
+        pcDest++;
+        pcSrc++;
     }
-    *s1 = '\0';
+    *pcDest = '\0';
     return start;
 }
 
 
-int Str_compare(const char *s1, const char *s2) {
-    assert(s1 != NULL && s2 != NULL);
+int Str_compare(const char *pcSrc1, const char *pcSrc2) {
+    assert(pcSrc1 != NULL && pcSrc2 != NULL);
 
-    while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2) {
-        s1++;
-        s2++;
+    while (*pcSrc1 != '\0' && *pcSrc2 != '\0' && *pcSrc1 == *pcSrc2) {
+        pcSrc1++;
+        pcSrc2++;
     }
 
-    return (int)(*s1 - *s2);
+    return (int)(*pcSrc1 - *pcSrc2);
 }
 
 char *Str_search(const char *pcHaystack, const char *pcNeedle) {
-    assert(s1 != NULL && s2 != NULL);
+    assert(pcHaystack != NULL && pcNeedle != NULL);
 
-    if (*s2 == '\0') {
-        return s1;
+    if (*pcNeedle == '\0') {
+        return pcHaystack;
     }
 
-    while (*s1 != '\0') {
-        const char *s1_copy = s1;
-        const char *s2_copy = s2;
+    while (*pcHaystack != '\0') {
+        const char *pcHaystack_copy = s1;
+        const char *pcNeedle_copy = s2;
 
-        while (*s1_copy != '\0' && *s2_copy != '\0' && *s1_copy == *s2_copy) {
-            s1_copy++;
-            s2_copy++;
+        while (*pcHaystack_copy != '\0' && *pcNeedle_copy != '\0' && *pcHaystack_copy == *pcNeedle_copy) {
+            pcHaystack_copy++;
+            pcNeedle_copy++;
         }
 
-        if (*s2_copy == '\0') {
+        if (*pcNeedle_copy == '\0') {
             /* Casting to match strstr return type */
-            return (char *)s1;
+            return (char *)pcHaystack;
         }
 
-        s1++;
+        pcHaystack++;
     }
 
     return NULL;

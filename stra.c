@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "str.h"
 
 size_t Str_getLength(const char pcSrc[])
 {
     size_t uLength = 0;
-    assert(s != NULL);
-    while (s[uLength] != '\0')
+    assert(pcSrc != NULL);
+    while (p[uLength] != '\0')
         uLength++;
     return uLength;
 }
@@ -14,56 +15,56 @@ size_t Str_getLength(const char pcSrc[])
 char *Str_copy(char pcDest[], const char pcSrc[])
 {   
     size_t i;
-    assert(s1 != NULL && s2 != NULL);
-    for(i = 0; s2[i] != '\0'; i++) {
-        s1[i] = s2[i];
+    assert(pcDest != NULL && pcSrc != NULL);
+    for(i = 0; pcSrc[i] != '\0'; i++) {
+        pcDest[i] = pcSrc[i];
     }
-    s1[i] = '\0';
-    return s1;
+    pcDest[i] = '\0';
+    return pcDest;
 }
 
-char *Str_concat(char s1[], const char s2[]) {
+char *Str_concat(char pcDest[], const char pcSrc[]) {
     size_t i = 0;
     size_t j = 0;
-    assert(s1 != NULL && s2 != NULL);
-    while(s1[i] != '\0') {
+    assert(pcDest != NULL && pcSrc != NULL);
+    while(pcDest[i] != '\0') {
         i++;
     }
-    while (s2[j] != '\0') {
-        s1[i++] = s2[j++];
+    while (pcSrc[j] != '\0') {
+        pcDest[i++] = pcSrc[j++];
     }
-    s1[i] = '\0';
-    return s1;
+    pcDest[i] = '\0';
+    return pcDest;
 }
 
-int Str_compare(const char s1[], const char s2[]) {
+int Str_compare(const char pcSrc1[], const char pcSrc2[]) {
     size_t i = 0;
-    assert(s1 != NULL && s2 != NULL);
-    while (s1[i] != '\0' && s2[i] != '\0') {
-        if (s1[i] != s2[i]) {
-            return (int)(s1[i] - s2[i]);
+    assert(pcSrc1 != NULL && pcSrc2 != NULL);
+    while (pcSrc1[i] != '\0' && pcSrc2[i] != '\0') {
+        if (pcSrc1[i] != pcSrc2[i]) {
+            return (int)(pcSrc1[i] - pcSrc2[i]);
         }
         i++;
     }
-    return (int)(s1[i] - s2[i]);
+    return (int)(pcSrc1[i] - pcSrc2[i]);
 }
 
 char *Str_search(const char pcHaystack[], const char pcNeedle[]) {
     size_t i;
     size_t j;
-    assert(s1 != NULL && s2 != NULL);
+    assert(pcHaystack != NULL && pcNeedle != NULL);
     
-    if (s2[0] == '\0') {
-        return (char *)s1;
+    if (pcNeedle[0] == '\0') {
+        return (char *)pcHaystack;
     }
     
-    for (i = 0; s1[i] != '\0'; i++) {
+    for (i = 0; pcHaystack[i] != '\0'; i++) {
         j = 0;
-        while (s1[i+j] != '\0' && s2[j] != '\0' && s1[i+j] == s2[j]) {
+        while (pcHaystack[i+j] != '\0' && pcNeedle[j] != '\0' && pcHaystack[i+j] == pcNeedle[j]) {
             j++;
         }
-        if (s2[j] == '\0') {
-            return &s1[i];
+        if (pcNeedle[j] == '\0') {
+            return &pcHaystack[i];
         }
     }
     return NULL;
