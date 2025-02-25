@@ -53,18 +53,18 @@ whether the first n characters of the array pointed to by s1 are less
 than, equal to, or greater than the first n characters of the array
 pointed to by s2. Comparison stops if a null character is encountered
 in either array. */
-int Str_compare(const char s1[], const char s2[], size_t n) {
-    size_t i; 
+int Str_compare(const char s1[], const char s2[]) {
+    size_t i = 0;
     assert(s1 != NULL && s2 != NULL);
-    for(i = 0; i < n && s1[i] != '\0' && s2[i] != '\0'; i++) {
-        if(s1[i] != s2[i]) {
+
+    while (s1[i] != '\0' && s2[i] != '\0') {
+        if (s1[i] != s2[i]) {
             return s1[i] - s2[i];
         }
-        if(i < n) {
-            return s1[i] - s2[i];
-        }
-        return 0;
+        i++;
     }
+    
+    return s1[i] - s2[i];
 }
 
 /* A pointer to the first occurrence in the string pointed to by s1 of

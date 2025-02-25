@@ -63,10 +63,10 @@ whether the first n characters of the array pointed to by s1 are less
 than, equal to, or greater than the first n characters of the array
 pointed to by s2. Comparison stops if a null character is encountered
 in either array. */
-int Str_compare(const char *s1, const char *s2, size_t n) {
+int Str_compare(const char *s1, const char *s2) {
     assert(s1 != NULL && s2 != NULL);
     
-    while (*s1 != '\0' && *s2 != '\0' && n-- > 0) {
+    while (*s1 != '\0' && *s2 != '\0') {
         if(*s1 != *s2) {
             return *s1 - *s2;
         }
