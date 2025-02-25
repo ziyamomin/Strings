@@ -61,7 +61,7 @@ int Str_compare(const char s1[], const char s2[]) {
         }
         i++;
     }
-    int difference = s1[i] - s2[i];
+    int difference = (int)s1[i] - s2[i];
     return difference;
 }
 

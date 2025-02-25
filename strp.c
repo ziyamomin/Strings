@@ -70,7 +70,7 @@ int Str_compare(const char *s1, const char *s2) {
         s2++;
     }
 
-    int difference = *s1 - *s2;
+    int difference = (int)*s1 - *s2;
     return difference;
 }
 
