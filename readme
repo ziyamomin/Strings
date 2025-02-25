@@ -120,15 +120,7 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
-I get the following critTer warnings:
-replace.c: line 20: medium priority:
-Do you want to validate 'pcLine' through an assert?
-
-replace.c: line 20: medium priority:
-Do you want to validate 'pcFrom' through an assert?
-
-replace.c: line 20: medium priority:
-Do you want to validate 'pcTo' through an assert?
+None.
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
