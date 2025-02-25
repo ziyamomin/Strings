@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
+/* need to fix handling of one of the psrsmeters being null */
+
 /*--------------------------------------------------------------------*/
 
 /* If pcFrom is the empty string, then write string pcLine to stdout
@@ -20,12 +22,14 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
+
+   assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
+
    size_t replacements = 0;
    size_t fromLength = Str_getLength(pcFrom);
    const char *pCurrent = pcLine;
    const char *pFound;
 
-   assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
    if(pcFrom == NULL) {
       printf("%s", pcLine);
       return 0;
