@@ -23,6 +23,8 @@ static size_t replaceAndWrite(const char *pcLine, const char *pcFrom, const char
     const char *pCurrent = pcLine;
     const char *pFound;
 
+    assert(*pcLine != NULL && *pcFrom != NULL && *pcTo != NULL);
+
     if (fromLength == 0) {
         printf("%s", pcLine);
         return 0;
