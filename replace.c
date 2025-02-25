@@ -24,11 +24,11 @@ static size_t replaceAndWrite(const char *pcLine,
    size_t fromLength = Str_getLength(pcFrom);
    const char *pCurrent = pcLine;
    const char *pFound;
-
+   
    assert(pcLine != NULL && pcFrom != NULL && pcTo != NULL);
 
-   if(*pcFrom == '\0') {
-      printf(*pcLine);
+   if(*pcFrom == NULL) {
+      printf("%s", pcLine);
       return 0;
    }
 
@@ -57,7 +57,6 @@ static size_t replaceAndWrite(const char *pcLine,
 
 int main(int argc, char *argv[])
 {
-   assert(argv != NULL);
    enum {MAX_LINE_SIZE = 4096};
    enum {PROPER_ARG_COUNT = 3};
 
@@ -75,9 +74,8 @@ int main(int argc, char *argv[])
    pcFrom = argv[1];
    pcTo = argv[2];
 
-   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL) {
+   while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
       uReplaceCount += replaceAndWrite(acLine, pcFrom, pcTo);
-   }
 
    fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
    return 0;
