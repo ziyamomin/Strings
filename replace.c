@@ -24,17 +24,15 @@ static size_t replaceAndWrite(const char *pcLine,
    size_t fromLength = Str_getLength(pcFrom);
    const char *pCurrent = pcLine;
    const char *pFound;
-
-   assert(pcLine != NULL && pcTo != NULL);
    
    if(Str_getLength(pcFrom) == 0) {
-      printf(pcLine);
+      printf("%s", pcLine);
       return 0;
    }
 
    while ((pFound = Str_search(pCurrent, pcFrom)) != NULL) {
       printf("%d", (int)(pFound - pCurrent));
-      printf(pcTo);
+      printf("%s", pcTo);
       pCurrent = pFound + fromLength;
       replacements++;
    }
