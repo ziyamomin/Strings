@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 /* This function computes the length of the passed in string parameter 
 s. The function attempts to compute the length of s and returns the 
