@@ -19,7 +19,7 @@ array pointed to by s1. If it encounters a null character in the array
 pointed to by s2, the function adds null characters to the array pointed
 by s1 until a total of n characters have been written. s1, a pointer 
 to the destination, is returned.*/
-char *Str_copy(char restrict s1[], const char restrict s2[], size_t n) {
+char *Str_copy(char s1[], const char s2[], size_t n) {
     size_t i;
     assert(s1 != NULL && s2 != NULL);
     for(i = 0; i < n && s2[i] != '\0'; i++) {
@@ -33,7 +33,7 @@ char *Str_copy(char restrict s1[], const char restrict s2[], size_t n) {
 
 /* This function appends a copy of the parameter string s2 to the end of
  the parameter string s1. The function returns the pointer s1. */
-char *Str_concat(char restrict s1[], const char restrict s2[], size_t n) {
+char *Str_concat(char s1[], const char s2[], size_t n) {
     size_t i = 0;
     size_t j = 0;
     assert(s1 != NULL && s2 != NULL);
