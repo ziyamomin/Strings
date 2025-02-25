@@ -85,8 +85,8 @@ const char *Str_search(const char *s1, const char *s2) {
         return s1;
     }
     
-    const char *start = s1;
-    const char *s2_copy = s2;
+    char *start = s1;
+    char *s2_copy = s2;
 
     while (*s1 != '\0') {
 
